@@ -9,7 +9,12 @@
 	</head>
 	<body>
 		<div>
-			{{.}}
+			<div id="searchform">
+				<form action="/search" method="GET">
+					<input name="q" type="text" />
+					<input name="btn" type="submit" value="Search" />
+				</form>
+			</div>
 		</div>
 	</body>
 </html>
