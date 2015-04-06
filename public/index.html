@@ -8,7 +8,39 @@
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<script type="text/javascript" src="/static/js/script.js"></script>
 		<style type="text/css">
-			#menu { float: right; }
+			a {color: #a5a5a5; text-decoration: none;}
+			a:visited {color: #a5a5a5;}
+			body {height: 100%; margin: 0;}
+			#wrap {position: absolute; top: 0; width: 100%;}
+			#header {height: 32px; margin-top: 16px;}
+			#menu {float: right; display: block; right: 30px; position: absolute;
+				border: none; text-align: center; vertical-align: middle;
+			}
+			
+			.button {display: block; border-radius: 2px; background-color: #fff; color: #a5a5a5;
+				font-size: 32px; width: 32px; height: 32px; line-height: 32px;
+				border: none;}
+			.button:hover {background-color: #a5a5a5; color: #fff;}
+			#logo {height: 262px; vertical-align: baseline; font-size: 96px;}
+			#logo-content {padding-top: 128px;}
+			#logo-content span {margin: 0px}
+			#logo-content-v {color: #3AA1BF;}
+			#logo-content-a1{color: #F2385A;}
+			#logo-content-r {color: #56D9CD;}
+			#logo-content-n {color: #3AA1BF;}
+			#logo-content-a2{color: #F5A503;}
+			#logo-content-m {color: #F2385A;}
+			#logo-content-e {color: #56D9CD;}
+			#search-form {max-width: 650px; margin-left: auto; margin-right: auto; display: block; float: none; width: 70%;}
+			#search-input {background-color: #fff; border: 1px solid #d9d9d9; border-top-color: #c0c0c0;
+				vertical-align: middle; padding: 0px 72px 0px 9px; position: relative;}
+			#search-input-q {border: none; font: 16px arial,sans-serif;
+				outline: none; white-space: nowrap; width: 100%; height: 32px;}
+			#search-input-q:focus {outline: none;}
+			#search-input-btn {border-radius: 2px; background-color: #fff; color: #a5a5a5;text-align: center;
+				font-size: 16px; min-width: 64px; position: absolute; top: 2px; bottom: 2px; right: 2px; left: auto; padding: 2px 0; 
+				border: none;}
+			#search-input-btn:hover {background-color: #a5a5a5; color: #fff;}
 
 		</style>
 	</head>
@@ -16,15 +48,23 @@
 		<div id="wrap" class="home">
 			<div id="header">
 				<div id="menu">
+					<a id="menu-button" class="button" href="#">≡</a>
 				</div>
 			</div>
 			<div id="body">
 				<div id="logo">
+					<div id="logo-content">
+						<center>
+							<span id="logo-content-v">V</span><span id="logo-content-a1">a</span><span id="logo-content-r">r</span><span id="logo-content-n">N</span><span id="logo-content-a2">a</span><span id="logo-content-m">m</span><span id="logo-content-e">e</span>
+						</center>
+					</div>
 				</div>
-				<div id="searchform">
+				<div id="search-form">
 					<form action="/search" method="GET">
-						<input name="q" type="text" />
-						<input name="btn" type="submit" value="Search" />
+						<div id="search-input">
+						<input id="search-input-q" name="q" type="text" autocomplete="off" />
+						<input id="search-input-btn" type="submit" value="Search" />
+						</div>
 					</form>
 				</div>
 			</div>
