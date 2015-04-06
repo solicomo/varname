@@ -12,9 +12,9 @@ func main() {
 		Extensions: []string{".tmpl", ".html"},
 	}))
 
-	m.Get("/", func(r render.Render) {
-		r.HTML(200, "index", "Variable Naming Service")
-	})
+//	m.Get("/", func(r render.Render) {
+//		r.HTML(200, "index", "Variable Naming Service")
+//	})
 
 	m.Get("/:name", func(r render.Render, params martini.Params) {
 		r.JSON(200, map[string]interface{}{"hello": params["name"]})
