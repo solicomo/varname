@@ -8,6 +8,12 @@
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
 		<script type="text/javascript" src="/static/js/script.js"></script>
 		<style type="text/css">
+			@font-face {
+				font-family: 'feather';
+         		src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAVkAA4AAAAACKAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABRAAAABoAAAAcc9Gf60dERUYAAAFgAAAAHAAAAB4AJwAcT1MvMgAAAXwAAAA9AAAAYBvwBdVjbWFwAAABvAAAAG8AAAGOHug3xmdhc3AAAAIsAAAACAAAAAgAAAAQZ2x5ZgAAAjQAAAEFAAAB4LqI8N5oZWFkAAADPAAAACsAAAA2CVpzdWhoZWEAAANoAAAAHQAAACQOrAeYaG10eAAAA4gAAAA3AAAAVjh0AFZsb2NhAAADwAAAABoAAAAuAhABnG1heHAAAAPcAAAAGAAAACAAGgBObmFtZQAAA/QAAADvAAABqvsWSgtwb3N0AAAE5AAAAHYAAADl8zIqg3dlYmYAAAVcAAAABgAAAAZjaFUjeNpjYGBgZACCi/YVB8C0p7AzlH4OAD+aBc4AAHjaY2BkYGDgAWIxIGZiYARCUSBmAfMYAASFAER42mNgZk5lnMDAysDCasQ6g4GBUQ5CM19jSGMSYkAFjAIMGIDxoQJ7w/8GBgZ2BoY6EB9JToGBEQCowgfgAAAAeNpjYGBgZoBgGQZGBhDoAPIYwXwWhhwgLcYgABRhA4opMCxQ4FLQV4hX/fPA7KHC/7///4N1gMQZ0MX/P/mf+oDt/qP7m2+Jy9+T+wo2VYwBG2AE2c/IBsTMUAEmIMGEoQrooKECWMnSBQB/8h3vAAABAAH//wAPeNqdT0tqwzAUfLKJtW6JWyGyia22UIwRdtIPGF2gG618giC8El4G0XWWIgfwCXSunKKUtFLUQrNqqWYxzOjNkwYQfJ8E4DmB/+vU69S7/YfDDgPcwwsAaq6vAvI5zjA6UVncoexEtwHr1eNDQJsXfsQjn8dI28SL9SoOlmk/WauGTlSVRAdCCGP0uNgYs5v2VinRdUIpu5+MHqWsOa+lHLXZjlpKXtdcSj1uMYhODdZOO/O6OS78CkIpOsiq8uHg+ycG1QnHw7w2Roc0P1exrUOA+5mDS7iBJ9902cSa5bKIrdqLP1kIMgi/IOzti3/TM0dowSghlBWUvMNPlZwp+ARHJFPTAAAAeNpjYGQAA9kn5/Lj+W2+MnBzgPkXPYWfI+j/q9hXsYO4HAxMIAoAMIAKhQB42mNgZGBgZ/jfxMDAwQAC7KsYGBlQgSgAO+MCWQAAAHjaY2CAAKZVEJoFipkbGBjYkWimUAYGxgNArAXBDA+AdBqQTobQIDnmFwwMHAwMYQyrAPPWB/wAeNpjYAACDiAUYJBgUMADNRjmMHwAAC7SA60AAHjaY2BkYGAQY/BhYGYAASYGNAAACmQAaXjaXY69SgNREEZP3CgqktJCRFJbhI34A3Y2ooWNinZComsIxkTXbOGLWPsUPoM/T+ALWPoAVh52ByXhcueemfm+uQMs8URCrb5AjQYEz8iN4ERaDa6zxnrwLMscBM+puQheZJNB8Kua5+A3Ul6C35nnK/jDHb4r/kxY4Yc+l4y49Y4YckxGj8KZHfKp3mTWnNKemeU8qKq6bVruMOnZL+PYbk/1sHR0zDOurHV5NB6WjqNwtDi32+X6z1nNPfXfzGyPO2c0PTve1LPLFtvGtKxs+Lat3KjO1I79r9BRuOn/NifcW+lbz1UNfgHjgT0rAHjafctJDoJAFIThV80kzlM8x+vGRl0SA1cREkLcuOD2Cl1ra/Mllfxi5P8uIjBiEEmEGAlSZFggxxIrrLHBFjvsccARJ5zTVz++W5t9hk5VaaWT7ndQSx0t6JV6WtIbvdMHrYKuCfqgb56TtRZzX1unX88/KbYAAAABVSNjZwAA) format('woff');
+				font-weight: normal;
+				font-style: normal;
+			}
 			a {color: #a5a5a5; text-decoration: none;}
 			a:visited {color: #a5a5a5;}
 			body {height: 100%; margin: 0;}
@@ -16,13 +22,12 @@
 			#menu {float: right; display: block; right: 30px; position: absolute;
 				border: none; text-align: center; vertical-align: middle;
 			}
-			
 			.button {display: block; border-radius: 2px; background-color: #fff; color: #a5a5a5;
-				font-size: 32px; width: 32px; height: 32px; line-height: 32px;
+				font-family: "feather" !important; font-size: 16px; width: 32px; height: 32px; line-height: 32px;
 				border: none;}
 			.button:hover {background-color: #a5a5a5; color: #fff;}
 			#logo {height: 262px; vertical-align: baseline; font-size: 96px;}
-			#logo-content {padding-top: 128px;}
+			#logo-content {padding-top: 128px;font-family: cursive;}
 			#logo-content span {margin: 0px}
 			#logo-content-v {color: #3AA1BF;}
 			#logo-content-a1{color: #F2385A;}
@@ -34,21 +39,31 @@
 			#search-form {max-width: 650px; margin-left: auto; margin-right: auto; display: block; float: none; width: 70%;}
 			#search-input {background-color: #fff; border: 1px solid #d9d9d9; border-top-color: #c0c0c0;
 				vertical-align: middle; padding: 0px 72px 0px 9px; position: relative;}
-			#search-input-q {border: none; font: 16px arial,sans-serif;
+			#search-input-q {border: none; fonti-size: 16px;
 				outline: none; white-space: nowrap; width: 100%; height: 32px;}
 			#search-input-q:focus {outline: none;}
 			#search-input-btn {border-radius: 2px; background-color: #fff; color: #a5a5a5;text-align: center;
-				font-size: 16px; min-width: 64px; position: absolute; top: 2px; bottom: 2px; right: 2px; left: auto; padding: 2px 0; 
+				font-family: feather !important; font-size: 16px; min-width: 64px; position: absolute;
+				top: 2px; bottom: 2px; right: 2px; left: auto; padding: 2px 0; 
 				border: none;}
 			#search-input-btn:hover {background-color: #a5a5a5; color: #fff;}
 
 		</style>
+		<script type="text/javascript">
+			function onInputFocus() {
+				document.getElementById("search-input").style.borderColor = "#3AA1BF";
+			}
+			function onInputBlur() {
+				document.getElementById("search-input").style.borderColor = "#d9d9d9";
+				document.getElementById("search-input").style.borderTopColor = "#c0c0c0";
+			}
+		</script>
 	</head>
 	<body>
 		<div id="wrap" class="home">
 			<div id="header">
 				<div id="menu">
-					<a id="menu-button" class="button" href="#">≡</a>
+					<a id="menu-button" class="button" href="#">&#xe120;</a>
 				</div>
 			</div>
 			<div id="body">
@@ -62,8 +77,8 @@
 				<div id="search-form">
 					<form action="/search" method="GET">
 						<div id="search-input">
-						<input id="search-input-q" name="q" type="text" autocomplete="off" />
-						<input id="search-input-btn" type="submit" value="Search" />
+						<input id="search-input-q" name="q" type="text" autocomplete="off" onfocus="onInputFocus()" onblur="onInputBlur()" />
+						<input id="search-input-btn" type="submit" value="&#xe036;" />
 						</div>
 					</form>
 				</div>

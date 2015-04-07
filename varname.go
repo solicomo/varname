@@ -20,5 +20,5 @@ func main() {
 		r.JSON(200, map[string]interface{}{"hello": params["name"]})
 	})
 
-	m.Run()
+	m.RunOnAddr(":8080")
 }
