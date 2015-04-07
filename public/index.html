@@ -14,24 +14,81 @@
 				font-weight: normal;
 				font-style: normal;
 			}
-			a {color: #a5a5a5; text-decoration: none;}
-			a:visited {color: #a5a5a5;}
+			a {color: rgba(0, 0, 0, .25); text-decoration: none;}
+			a:visited {color: rgba(0, 0, 0, .25);}
 			body {height: 100%; margin: 0;}
 			#wrap {position: absolute; top: 0; width: 100%;}
 			#header {height: 32px; margin-top: 16px;}
-			#menu {display: block; right: 30px; position: absolute; border: none;}
-			.menu-button {display: block; border-radius: 2px; background-color: #fff; color: #a5a5a5;
-				font-family: "feather" !important; font-size: 16px; width: 32px; height: 32px; line-height: 32px;
-				text-align: center; vertical-align: middle;
-				border: none; }
-			.menu-button:hover {background-color: #a5a5a5; color: #fff;}
-			.menu-tab {display: none;}
-			.menu-item {width: 128px; height: 32px; border-bottom: none;}
-			.menu-item-last {border-bottom: 1px solid #A5A5A5;}
-			.menu-item:hover {background-color: #A5A5A5;}
-			#logo {height: 262px; vertical-align: baseline; font-size: 96px;}
-			#logo-content {padding-top: 128px;font-family: cursive;}
-			#logo-content span {margin: 0px}
+			#menu {position: absolute; right: 32px; display: block; border: none;}
+			.submenu {display: inline-block;}
+			.menu-button {
+				display: block;
+				width: 32px;
+				height: 32px;
+				border: none;
+				border-radius: 2px;
+				background-color: #fff;
+				color: #999;
+				font-family: "feather";
+				font-size: 16px;
+				line-height: 32px;
+				text-align: center;
+				vertical-align: middle;
+			}
+			.menu-button:hover {background-color: rgba(0, 0, 0, .25); color: #fff;}
+			.menu-tab {
+				display: none;
+				padding: 1px;
+				margin-left: -100px;
+				margin-top: 10px;
+				background-color: #fff;
+				-webkit-background-clip: padding-box;
+				        background-clip: padding-box;
+				border: 1px solid rgba(0, 0, 0, .2);
+				border-radius: 2px;
+				-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+				        box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+			}
+			.menu-tab > .menu-tab-arrow, .menu-tab > .menu-tab-arrow:after {
+				position: absolute;
+				display: block;
+				width: 0;
+				height: 0;
+				border-color: transparent;
+				border-style: solid;
+			}
+			.menu-tab > .menu-tab-arrow {
+				border-width: 11px;
+				margin-top: -12px;
+				margin-left: 103px;
+				border-top-width: 0;
+				border-bottom-color: rgba(0, 0, 0, .25);
+			}
+			.menu-tab > .menu-tab-arrow:after {
+				content: "";
+				border-width: 10px;
+				top: 1px;
+				margin-left: -10px;
+				border-top-width: 0;
+				border-bottom-color: #fff;
+			}
+			.menu-item {
+				display: block;
+				width: 128px;
+				height: 32px;
+				border-bottom: none;
+			}
+			.menu-item-last {
+				display: block;
+				border-bottom: 1px solid rgba(0, 0, 0, .25);
+			}
+			.menu-item:hover {
+				background-color: rgba(0, 0, 0, .25);
+			}
+
+
+			#logo {height: 262px; font-family: cursive; font-size: 96px; vertical-align: baseline;}
+			#logo-content {padding-top: 128px;}
 			#logo-content-v {color: #3AA1BF;}
 			#logo-content-a1{color: #F2385A;}
 			#logo-content-r {color: #56D9CD;}
@@ -39,26 +96,77 @@
 			#logo-content-a2{color: #F5A503;}
 			#logo-content-m {color: #F2385A;}
 			#logo-content-e {color: #56D9CD;}
-			#search-form {max-width: 650px; margin-left: auto; margin-right: auto; display: block; float: none; width: 70%;}
-			#search-input {background-color: #fff; border: 1px solid #d9d9d9; border-top-color: #c0c0c0;
-				vertical-align: middle; padding: 0px 72px 0px 9px; position: relative;}
-			#search-input-q {border: none; fonti-size: 16px;
-				outline: none; white-space: nowrap; width: 100%; height: 32px;}
+			#search-form {
+				display: block;
+				float: none;
+				width: 70%;
+				max-width: 650px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			#search-input {
+				position: relative;
+				padding: 0px 72px 0px 9px;
+				background-color: #fff;
+				border: 1px solid rgba(0, 0, 0, .25);
+				vertical-align: middle;
+			}
+			#search-input-q {
+				width: 100%;
+				height: 32px;
+				border: none;
+				outline: none;
+				fonti-size: 16px;
+				white-space: nowrap;
+			}
 			#search-input-q:focus {outline: none;}
-			#search-input-btn {border-radius: 2px; background-color: #fff; color: #a5a5a5;text-align: center;
-				font-family: feather !important; font-size: 16px; min-width: 64px; position: absolute;
-				top: 2px; bottom: 2px; right: 2px; left: auto; padding: 2px 0; 
-				border: none;}
-			#search-input-btn:hover {background-color: #a5a5a5; color: #fff;}
+			#search-input-btn {
+				position: absolute;
+				top: 2px;
+				bottom: 2px;
+				right: 2px;
+				left: auto;
+				padding: 2px 0;
+				min-width: 64px;
+				border: none;
+				border-radius: 2px;
+				background-color: #fff;
+				color: rgba(0, 0, 0, .25);
+				text-align: center;
+				font-family: feather;
+				font-size: 16px;
+			}
+			#search-input-btn:hover {background-color: rgba(0, 0, 0, .25); color: #fff;}
 
 		</style>
 		<script type="text/javascript">
-			function onInputFocus() {
-				document.getElementById("search-input").style.borderColor = "#3AA1BF";
+			function onInputFocus(input) {
+				input.parentElement.style.borderColor = "#3AA1BF";
+				return false;
 			}
-			function onInputBlur() {
-				document.getElementById("search-input").style.borderColor = "#d9d9d9";
-				document.getElementById("search-input").style.borderTopColor = "#c0c0c0";
+			function onInputBlur(input) {
+				input.parentElement.style.borderColor = "rgba(0, 0, 0, .25)";
+				return false;
+			}
+
+			var isClearTabs = false;
+			function clearTabs() {
+				var menutabs = document.getElementsByClassName("menu-tab");
+				for (var i = 0; i < menutabs.length; ++i) {
+					menutabs[i].style.display = "none";
+				}
+			}
+			function showTabFor(menuBtn) {
+				clearTabs();
+				menuBtn.parentElement.getElementsByClassName("menu-tab")[0].style.display = "block";
+				isClearTabs = false;
+				return false;
+			}
+			document.onclick = function() {
+				if (isClearTabs) {
+					clearTabs();
+				}
+				isClearTabs = true;
 			}
 		</script>
 	</head>
@@ -66,32 +174,28 @@
 		<div id="wrap" class="home">
 			<div id="header">
 				<div id="menu">
-					<span class="submenu">
-						<a class="menu-button" href="javascript:void(0)">&#xe120;</a>
+					<div class="submenu" style="display:none;">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
 						<div class="menu-tab">
-							<div class="menu-tab-spike-a">
-							</div>
-							<div class="menu-tab-spike-b">
+							<div class="menu-tab-arrow">
 							</div>
 							<div class="menu-tab-content">
-								<a id="menu-setting" class="menu-item menu-item-last"></a>
-								<a id="menu-about" class="menu-item"></a>
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
 							</div>
 						</div>
-					</span>
-					<span class="submenu">
-						<a class="menu-button" href="javascript:void(0)">&#xe120;</a>
+					</div>
+					<div class="submenu">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
 						<div class="menu-tab">
-							<div class="menu-tab-spike-a">
-							</div>
-							<div class="menu-tab-spike-b">
+							<div class="menu-tab-arrow">
 							</div>
 							<div class="menu-tab-content">
-								<a id="menu-setting1" class="menu-item menu-item-last"></a>
-								<a id="menu-about1" class="menu-item"></a>
+								<a class="menu-item menu-item-last" href="/setting.html"></a>
+								<a class="menu-item" href="/about.html"></a>
 							</div>
 						</div>
-					</span>
+					</div>
 				</div>
 			</div>
 			<div id="body">
@@ -105,7 +209,8 @@
 				<div id="search-form">
 					<form action="/search" method="GET">
 						<div id="search-input">
-						<input id="search-input-q" name="q" type="text" autocomplete="off" onfocus="onInputFocus()" onblur="onInputBlur()" />
+						<input id="search-input-q" name="q" type="text" autocomplete="off"
+							onfocus="onInputFocus(this)" onblur="onInputBlur(this)" />
 						<input id="search-input-btn" type="submit" value="&#xe036;" />
 						</div>
 					</form>
