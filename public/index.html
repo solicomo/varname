@@ -19,13 +19,16 @@
 			body {height: 100%; margin: 0;}
 			#wrap {position: absolute; top: 0; width: 100%;}
 			#header {height: 32px; margin-top: 16px;}
-			#menu {float: right; display: block; right: 30px; position: absolute;
-				border: none; text-align: center; vertical-align: middle;
-			}
-			.button {display: block; border-radius: 2px; background-color: #fff; color: #a5a5a5;
+			#menu {display: block; right: 30px; position: absolute; border: none;}
+			.menu-button {display: block; border-radius: 2px; background-color: #fff; color: #a5a5a5;
 				font-family: "feather" !important; font-size: 16px; width: 32px; height: 32px; line-height: 32px;
-				border: none;}
-			.button:hover {background-color: #a5a5a5; color: #fff;}
+				text-align: center; vertical-align: middle;
+				border: none; }
+			.menu-button:hover {background-color: #a5a5a5; color: #fff;}
+			.menu-tab {display: none;}
+			.menu-item {width: 128px; height: 32px; border-bottom: none;}
+			.menu-item-last {border-bottom: 1px solid #A5A5A5;}
+			.menu-item:hover {background-color: #A5A5A5;}
 			#logo {height: 262px; vertical-align: baseline; font-size: 96px;}
 			#logo-content {padding-top: 128px;font-family: cursive;}
 			#logo-content span {margin: 0px}
@@ -63,7 +66,32 @@
 		<div id="wrap" class="home">
 			<div id="header">
 				<div id="menu">
-					<a id="menu-button" class="button" href="#">&#xe120;</a>
+					<span class="submenu">
+						<a class="menu-button" href="javascript:void(0)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-spike-a">
+							</div>
+							<div class="menu-tab-spike-b">
+							</div>
+							<div class="menu-tab-content">
+								<a id="menu-setting" class="menu-item menu-item-last"></a>
+								<a id="menu-about" class="menu-item"></a>
+							</div>
+						</div>
+					</span>
+					<span class="submenu">
+						<a class="menu-button" href="javascript:void(0)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-spike-a">
+							</div>
+							<div class="menu-tab-spike-b">
+							</div>
+							<div class="menu-tab-content">
+								<a id="menu-setting1" class="menu-item menu-item-last"></a>
+								<a id="menu-about1" class="menu-item"></a>
+							</div>
+						</div>
+					</span>
 				</div>
 			</div>
 			<div id="body">
