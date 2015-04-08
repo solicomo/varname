@@ -37,6 +37,7 @@
 			}
 			.menu-button:hover {background-color: rgba(0, 0, 0, .25); color: #fff;}
 			.menu-tab {
+				position: absolute;
 				display: none;
 				padding: 1px;
 				margin-left: -100px;
@@ -74,18 +75,20 @@
 			}
 			.menu-item {
 				display: block;
-				width: 128px;
+				padding-left: 12px;
+				width: 116px;
 				height: 32px;
 				border-bottom: none;
+				font-size: 16px;
+				line-height: 32px;
+				vertical-align: middle;
 			}
 			.menu-item-last {
-				display: block;
 				border-bottom: 1px solid rgba(0, 0, 0, .25);
 			}
 			.menu-item:hover {
 				background-color: rgba(0, 0, 0, .25);
 			}
-
 
 			#logo {height: 262px; font-family: cursive; font-size: 96px; vertical-align: baseline;}
 			#logo-content {padding-top: 128px;}
@@ -174,7 +177,7 @@
 		<div id="wrap" class="home">
 			<div id="header">
 				<div id="menu">
-					<div class="submenu" style="display:none;">
+					<div class="submenu">
 						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
 						<div class="menu-tab">
 							<div class="menu-tab-arrow">
@@ -191,11 +194,23 @@
 							<div class="menu-tab-arrow">
 							</div>
 							<div class="menu-tab-content">
-								<a class="menu-item menu-item-last" href="/setting.html"></a>
-								<a class="menu-item" href="/about.html"></a>
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
 							</div>
 						</div>
 					</div>
+					<div class="submenu">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-arrow">
+							</div>
+							<div class="menu-tab-content">
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
+							</div>
+						</div>
+					</div>
+
 				</div>
 			</div>
 			<div id="body">
