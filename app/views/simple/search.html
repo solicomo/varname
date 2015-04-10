@@ -1,0 +1,32 @@
+{{template "head" .}}
+<div id="search-content">
+	<div id="search-list">
+		<ol id="search-ol">
+			{{range .SearchList}}
+			<li class="search-li">
+				<h3 class="search-title"><a href="{{.Url}}">{{.Title}}</a></h3>
+				<cite class="search-cite">{{.Url}}</cite>
+				<div class="search-caption">
+					{{.Caption}}
+				</div>
+			</li>
+			{{end}}
+		</ol>
+	</div>
+	<div id="search-relate">
+		<ol id="search-relate-list">
+			{{range .SearchRelates}}
+			<li><a href="/search?q={{.}}">{{.}}</a></li>
+			{{end}}
+		</ol>
+	</div>
+	<div id="search-paging">
+		<ol id="search-page-list">
+			<li><a href="/search?q={{.SearchString}}&start=0&linage=20">First</a></li>
+			<li><a href="/search?q={{.SearchString}}&start=20&linage=20">2</a></li>
+			<li><a href="/search?q={{.SearchString}}&start=40&linage=20">3</a></li>
+			<li><a href="/search?q={{.SearchString}}&start=last">Last</a></li>
+		</ol>
+	</div>
+</div>
+{{template "foot" .}}

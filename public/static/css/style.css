@@ -1,0 +1,274 @@
+@font-face {
+	font-family: 'feather';
+	src: url(data:application/font-woff;charset=utf-8;base64,d09GRgABAAAAAAVkAA4AAAAACKAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABGRlRNAAABRAAAABoAAAAcc9Gf60dERUYAAAFgAAAAHAAAAB4AJwAcT1MvMgAAAXwAAAA9AAAAYBvwBdVjbWFwAAABvAAAAG8AAAGOHug3xmdhc3AAAAIsAAAACAAAAAgAAAAQZ2x5ZgAAAjQAAAEFAAAB4LqI8N5oZWFkAAADPAAAACsAAAA2CVpzdWhoZWEAAANoAAAAHQAAACQOrAeYaG10eAAAA4gAAAA3AAAAVjh0AFZsb2NhAAADwAAAABoAAAAuAhABnG1heHAAAAPcAAAAGAAAACAAGgBObmFtZQAAA/QAAADvAAABqvsWSgtwb3N0AAAE5AAAAHYAAADl8zIqg3dlYmYAAAVcAAAABgAAAAZjaFUjeNpjYGBgZACCi/YVB8C0p7AzlH4OAD+aBc4AAHjaY2BkYGDgAWIxIGZiYARCUSBmAfMYAASFAER42mNgZk5lnMDAysDCasQ6g4GBUQ5CM19jSGMSYkAFjAIMGIDxoQJ7w/8GBgZ2BoY6EB9JToGBEQCowgfgAAAAeNpjYGBgZoBgGQZGBhDoAPIYwXwWhhwgLcYgABRhA4opMCxQ4FLQV4hX/fPA7KHC/7///4N1gMQZ0MX/P/mf+oDt/qP7m2+Jy9+T+wo2VYwBG2AE2c/IBsTMUAEmIMGEoQrooKECWMnSBQB/8h3vAAABAAH//wAPeNqdT0tqwzAUfLKJtW6JWyGyia22UIwRdtIPGF2gG618giC8El4G0XWWIgfwCXSunKKUtFLUQrNqqWYxzOjNkwYQfJ8E4DmB/+vU69S7/YfDDgPcwwsAaq6vAvI5zjA6UVncoexEtwHr1eNDQJsXfsQjn8dI28SL9SoOlmk/WauGTlSVRAdCCGP0uNgYs5v2VinRdUIpu5+MHqWsOa+lHLXZjlpKXtdcSj1uMYhODdZOO/O6OS78CkIpOsiq8uHg+ycG1QnHw7w2Roc0P1exrUOA+5mDS7iBJ9902cSa5bKIrdqLP1kIMgi/IOzti3/TM0dowSghlBWUvMNPlZwp+ARHJFPTAAAAeNpjYGQAA9kn5/Lj+W2+MnBzgPkXPYWfI+j/q9hXsYO4HAxMIAoAMIAKhQB42mNgZGBgZ/jfxMDAwQAC7KsYGBlQgSgAO+MCWQAAAHjaY2CAAKZVEJoFipkbGBjYkWimUAYGxgNArAXBDA+AdBqQTobQIDnmFwwMHAwMYQyrAPPWB/wAeNpjYAACDiAUYJBgUMADNRjmMHwAAC7SA60AAHjaY2BkYGAQY/BhYGYAASYGNAAACmQAaXjaXY69SgNREEZP3CgqktJCRFJbhI34A3Y2ooWNinZComsIxkTXbOGLWPsUPoM/T+ALWPoAVh52ByXhcueemfm+uQMs8URCrb5AjQYEz8iN4ERaDa6zxnrwLMscBM+puQheZJNB8Kua5+A3Ul6C35nnK/jDHb4r/kxY4Yc+l4y49Y4YckxGj8KZHfKp3mTWnNKemeU8qKq6bVruMOnZL+PYbk/1sHR0zDOurHV5NB6WjqNwtDi32+X6z1nNPfXfzGyPO2c0PTve1LPLFtvGtKxs+Lat3KjO1I79r9BRuOn/NifcW+lbz1UNfgHjgT0rAHjafctJDoJAFIThV80kzlM8x+vGRl0SA1cREkLcuOD2Cl1ra/Mllfxi5P8uIjBiEEmEGAlSZFggxxIrrLHBFjvsccARJ5zTVz++W5t9hk5VaaWT7ndQSx0t6JV6WtIbvdMHrYKuCfqgb56TtRZzX1unX88/KbYAAAABVSNjZwAA) format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+a {
+	text-decoration: none;
+}
+
+ol, li {
+	list-style: none;
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100%;
+	margin: 0;
+}
+
+#wrap {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#header {
+	display: block;
+	height: 32px;
+	padding-top: 16px;
+	padding-bottom: 12px;
+	background-color: #f1f1f1;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#logo {
+	display: inline-block;
+	width: 120px;
+	font-family: cursive;
+	font-size: 24px;
+	line-height: 32px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#logo-content {
+}
+
+#logo-content-v {
+	color: #3AA1BF;
+}
+
+#logo-content-a1 {
+	color: #F2385A;
+}
+
+#logo-content-r {
+	color: #56D9CD;
+}
+
+#logo-content-n {
+	color: #3AA1BF;
+}
+
+#logo-content-a2 {
+	color: #F5A503;
+}
+
+#logo-content-m {
+	color: #F2385A;
+}
+
+#logo-content-e {
+	color: #56D9CD;
+}
+
+#search-form {
+	display: inline-block;
+	width: 60%;
+	max-width: 600px;
+}
+
+#search-input {
+	position: relative;
+	padding: 0px 72px 0px 9px;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, .25);
+	vertical-align: middle;
+}
+
+#search-input-q {
+	width: 100%;
+	height: 28px;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	white-space: nowrap;
+}
+
+#search-input-q:focus {
+	outline: none;
+}
+
+#search-input-btn {
+	position: absolute;
+	top: 2px;
+	bottom: 2px;
+	right: 2px;
+	left: auto;
+	padding: 2px 0;
+	min-width: 64px;
+	border: none;
+	border-radius: 2px;
+	background-color: #fff;
+	color: rgba(0, 0, 0, .25);
+	text-align: center;
+	font-family: "feather";
+	font-size: 16px;
+}
+
+#search-input-btn:hover {
+	background-color: rgba(0, 0, 0, .25);
+	color: #fff;
+}
+
+#menu {
+	position: absolute;
+	right: 32px;
+	display: inline-block;
+	border: none;
+}
+
+.submenu {
+	display: inline-block;
+}
+
+.menu-button {
+	display: block;
+	width: 32px;
+	height: 32px;
+	border: none;
+	border-radius: 2px;
+	color: rgba(0, 0, 0, .25);
+	font-family: "feather";
+	font-size: 16px;
+	line-height: 32px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.menu-button:hover {
+	background-color: rgba(0, 0, 0, .25);
+	color: #fff;
+}
+
+.menu-tab {
+	position: absolute;
+	display: none;
+	padding: 1px;
+	margin-left: -100px;
+	margin-top: 10px;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 2px;
+	-webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+
+.menu-tab>.menu-tab-arrow, .menu-tab>.menu-tab-arrow:after {
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+
+.menu-tab>.menu-tab-arrow {
+	border-width: 11px;
+	margin-top: -12px;
+	margin-left: 103px;
+	border-top-width: 0;
+	border-bottom-color: rgba(0, 0, 0, .25);
+}
+
+.menu-tab>.menu-tab-arrow:after {
+	content: "";
+	border-width: 10px;
+	top: 1px;
+	margin-left: -10px;
+	border-top-width: 0;
+	border-bottom-color: #fff;
+}
+
+.menu-item {
+	display: block;
+	padding-left: 12px;
+	width: 116px;
+	height: 32px;
+	border-bottom: none;
+	color: #666;
+	font-size: 16px;
+	line-height: 32px;
+	vertical-align: middle;
+}
+
+.menu-item-last {
+	border-bottom: 1px solid rgba(0, 0, 0, .25);
+}
+
+.menu-item:hover {
+	background-color: rgba(0, 0, 0, .25);
+}
+
+#footer {
+	display: block;
+	padding-top: 18px;
+	height: 84px;
+	background: #f2f2f2;
+	border-top: 1px solid #e4e4e4;
+}
+
+#search-content {
+	display: block;
+	margin-left: 120px;
+}
+
+#search-list {
+	margin: 9px 0 0;
+}
+
+.search-li {
+	margin: 0 0 23px 0;
+	border: 0;
+	padding: 0;
+	line-height: 1.2;
+}
+
+.search-title {
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	font-size: 18px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.search-title > a {
+	color: #3AA1BF;
+}
+
+.search-title > a:visited {
+	color: #56D9CD;
+}
+
+.search-cite {
+	font-size: 14px;
+	line-height: 16px;
+	color: #F5A503;
+	white-space: nowrap;
+	word-wrap: break-word;
+}
+
+.search-caption {
+	font-size: 13px;
+	max-width: 42em;
+	line-height: 18px;
+	color: #545454;
+	word-wrap: break-word;
+}

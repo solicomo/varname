@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<title>{{.Title}} - VarName</title>
+		<meta name="description" content="varname - Variable Naming Service">
+		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
+		<script type="text/javascript" src="/static/js/script.js"></script>
+	</head>
+	<body>
+		<div id="wrap" class="{{.PageClass}}">
+			<div id="header">
+				<div id="logo">
+					<a id="logo-content" href="/">
+						<span id="logo-content-v">V</span><span id="logo-content-a1">a</span><span id="logo-content-r">r</span><span id="logo-content-n">N</span><span id="logo-content-a2">a</span><span id="logo-content-m">m</span><span id="logo-content-e">e</span>
+					</a>
+				</div><!-- This comment is a trick to remove the space between inline-block items
+				--><div id="search-form">
+					<form action="/search" method="GET">
+						<div id="search-input">
+							<input id="search-input-q" name="q" type="text" autocomplete="off"
+								   onfocus="onInputFocus(this)" onblur="onInputBlur(this)" />
+							<input id="search-input-btn" type="submit" value="&#xe036;" />
+						</div>
+					</form>
+				</div>
+				<div id="menu">
+					<div class="submenu">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-arrow">
+							</div>
+							<div class="menu-tab-content">
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
+							</div>
+						</div>
+					</div>
+					<div class="submenu">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-arrow">
+							</div>
+							<div class="menu-tab-content">
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
+							</div>
+						</div>
+					</div>
+					<div class="submenu">
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<div class="menu-tab">
+							<div class="menu-tab-arrow">
+							</div>
+							<div class="menu-tab-content">
+								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
+								<a class="menu-item" href="/about.html">About</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+			<div id="body">
+
