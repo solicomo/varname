@@ -1,0 +1,26 @@
+{
+  "name": "varname",
+  "version": "0.0.0",
+  "homepage": "http://varname.org",
+  "authors": [
+    "Soli <soli@cbug.org>"
+  ],
+  "description": "Variable Naming Service",
+  "main": "varname.go",
+  "keywords": [
+    "variable",
+    "name"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/static/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0"
+  }
+}
