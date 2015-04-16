@@ -42,7 +42,7 @@ func main() {
 		r.HTML(200, "entry", map[string]interface{}{"entry": params["entry"]})
 	})
 
-	m.Get("/:page", func(r render.Render, params martini.Params) {
+	m.Get("/(?P<page>(about|terms))", func(r render.Render, params martini.Params) {
 		r.HTML(200, "page", map[string]interface{}{
 			"PageHead": params["page"], 
 			"PageContent": "This is " + params["page"] + " page.",
