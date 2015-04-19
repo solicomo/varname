@@ -1,6 +1,8 @@
 package main
 
 import (
+	"database/sql"
+	_ "github.com/mattn/go-sqlite3"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	"net/http"
