@@ -1,3 +1,17 @@
 CREATE TABLE IF NOT EXISTS entries (
-	entry PRIMARY KEY
-)
+	id INT PRIMARY KEY NOT NULL,
+	entry VARCHAR(255) UNIQUE,
+	ctime DATETIME NOT NULL,
+	atime DATETIME NOT NULL,
+	abbrs TEXT,
+	caption TEXT
+);
+
+CREATE TABLE IF NOT EXISTS comments (
+	id INT PRIMARY KEY NOT NULL,
+	user VARCHAR(255),
+	email VARCHAR(255),
+	url TEXT,
+	title TEXT,
+	comment TEXT
+);

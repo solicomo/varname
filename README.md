@@ -10,5 +10,5 @@ Variable Naming Service
 
 2. initate database
 
-    $ sqlite app/data/database.sqlite
-    > . init.sql
+    $ sqlite3 app/data/database.sqlite
+    > . app/data/init.sql
