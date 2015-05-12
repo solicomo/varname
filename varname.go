@@ -2,33 +2,34 @@ package main
 
 import (
 	"database/sql"
-	_ "github.com/mattn/go-sqlite3"
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
+	_ "github.com/mattn/go-sqlite3"
 	"net/http"
 )
 
 type SearchRecord struct {
-	Title string
-	Url string
+	Title   string
+	Url     string
 	Caption string
 }
 
 func main() {
 	m := martini.Classic()
 	m.Use(render.Renderer(render.Options{
-		Directory: "app/views/simple",
+		Directory:  "app/views/simple",
 		Extensions: []string{".tmpl", ".html"},
 	}))
 
+	fmt.Println("hello")
 	m.Get("/search", func(req *http.Request, r render.Render) {
 		qs := req.FormValue("q")
-		data := make(map[string] interface {})
+		data := make(map[string]interface{})
 		data["Title"] = qs
 		data["PageClass"] = "search"
 		data["SearchString"] = qs
-		data["SearchRelates"] = []string {qs, qs, qs, qs}
-		data["SearchList"] = []SearchRecord {
+		data["SearchRelates"] = []string{qs, qs, qs, qs}
+		data["SearchList"] = []SearchRecord{
 			{"Title: " + qs, qs, "Caption: " + qs + qs + qs},
 			{"Title: " + qs, qs, "Caption: " + qs + qs + qs},
 			{"Title: " + qs, qs, "Caption: " + qs + qs + qs},
@@ -46,7 +47,7 @@ func main() {
 
 	m.Get("/(?P<page>(about|terms))", func(r render.Render, params martini.Params) {
 		r.HTML(200, "page", map[string]interface{}{
-			"PageHead": params["page"], 
+			"PageHead":    params["page"],
 			"PageContent": "This is " + params["page"] + " page.",
 		})
 	})
