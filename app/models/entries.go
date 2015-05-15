@@ -15,9 +15,9 @@ type Entries struct {
 }
 
 const (
-	SQL_SELECT_ENTRIES = `SELECT id,name,ctime,atime,abbrs,caption FROM entries;`
 	SQL_UPDATE_ENTRY   = `UPDATE entries SET name=?,abbrs=?,caption=?,atime = datetime('now','localtime') WHERE id = ?;`
 	SQL_INSERT_ENTRY   = `INSERT INTO entries (name,abbrs,caption,ctime,atime) VALUES (?,?,?,datetime('now','localtime'),datetime('now','localtime'));`
+	SQL_SELECT_ENTRIES = `SELECT id,name,ctime,atime,abbrs,caption FROM entries;`
 )
 
 func (self *Entry) Save() (err error) {
@@ -41,7 +41,7 @@ func (self *Entry) Save() (err error) {
 	return
 }
 
-func (self *Entries) Filter(offset, count int, words string) (entries []Entry, err error) {
+func (self *Entries) Search(offset, count int, words string) (entries []Entry, err error) {
 
 	rows, err := db.Query(SQL_SELECT_ENTRIES)
 

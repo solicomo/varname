@@ -16,5 +16,5 @@ CREATE TABLE IF NOT EXISTS comments (
 	email VARCHAR(255),
 	url TEXT,
 	title TEXT,
-	comment TEXT
+	content TEXT
 );
