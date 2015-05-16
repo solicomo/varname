@@ -1,11 +1,11 @@
 package main
 
 import (
-	"database/sql"
+	"net/http"
+
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	_ "github.com/mattn/go-sqlite3"
-	"net/http"
 )
 
 type SearchRecord struct {
@@ -21,7 +21,6 @@ func main() {
 		Extensions: []string{".tmpl", ".html"},
 	}))
 
-	fmt.Println("hello")
 	m.Get("/search", func(req *http.Request, r render.Render) {
 		qs := req.FormValue("q")
 		data := make(map[string]interface{})

@@ -25,4 +25,4 @@ document.onclick = function() {
 		clearTabs();
 	}
 	isClearTabs = true;
-}
+};

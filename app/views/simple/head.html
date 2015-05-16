@@ -5,6 +5,7 @@
 		<title>{{.Title}} - VarName</title>
 		<meta name="description" content="varname - Variable Naming Service">
 		<link rel="icon" type="image/x-icon" href="/favicon.ico">
+		<link rel="stylesheet" type="text/css" href="/static/vendor/font-awesome/css/font-awesome.min.css" />
 		<link rel="stylesheet" type="text/css" href="/static/css/style.css" />
 		<script type="text/javascript" src="/static/js/script.js"></script>
 	</head>
@@ -21,41 +22,30 @@
 						<div id="search-input">
 							<input id="search-input-q" name="q" type="text" autocomplete="off"
 								   onfocus="onInputFocus(this)" onblur="onInputBlur(this)" />
-							<input id="search-input-btn" type="submit" value="&#xe036;" />
+							<button id="search-input-btn" type="submit"><i class="fa fa-search"></i></button>
 						</div>
 					</form>
 				</div>
 				<div id="menu">
 					<div class="submenu">
-						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)"><i class="fa fa-user"></i></a>
 						<div class="menu-tab">
 							<div class="menu-tab-arrow">
 							</div>
 							<div class="menu-tab-content">
-								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
-								<a class="menu-item" href="/about.html">About</a>
+								<a class="menu-item menu-item-last" href="/setting.html"><i class="fa fa-cog fa-fw"></i>&nbsp; Setting</a>
+								<a class="menu-item" href="/about.html"><i class="fa fa-info fa-fw"></i>&nbsp; About</a>
 							</div>
 						</div>
 					</div>
 					<div class="submenu">
-						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
+						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)"><i class="fa fa-bars"></i></a>
 						<div class="menu-tab">
 							<div class="menu-tab-arrow">
 							</div>
 							<div class="menu-tab-content">
-								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
-								<a class="menu-item" href="/about.html">About</a>
-							</div>
-						</div>
-					</div>
-					<div class="submenu">
-						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)">&#xe120;</a>
-						<div class="menu-tab">
-							<div class="menu-tab-arrow">
-							</div>
-							<div class="menu-tab-content">
-								<a class="menu-item menu-item-last" href="/setting.html">Setting</a>
-								<a class="menu-item" href="/about.html">About</a>
+								<a class="menu-item menu-item-last" href="/setting.html"><i class="fa fa-cog fa-fw"></i>&nbsp; Setting</a>
+								<a class="menu-item" href="/about.html"><i class="fa fa-info fa-fw"></i>&nbsp; About</a>
 							</div>
 						</div>
 					</div>
