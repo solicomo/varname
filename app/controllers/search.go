@@ -11,8 +11,10 @@ type SearchResult struct {
 func Normalize(qs string) (ns string) {
 
 	ns = strings.Join(strings.Fields(qs), " ")
+	return
 }
 
 func Search(offset, count int, qs string) (results []SearchResult, err error) {
 
+	return
 }

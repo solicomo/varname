@@ -1,45 +1,123 @@
 package main
 
 import (
+	"database/sql"
+	"encoding/json"
+	"io/ioutil"
+	"log"
 	"net/http"
-	"varname/app/controllers"
+	"path"
+	"runtime/debug"
+	"sync"
 
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	_ "github.com/mattn/go-sqlite3"
 )
 
-func main() {
-	m := martini.Classic()
-	m.Use(render.Renderer(render.Options{
-		Directory:  "app/views/simple",
-		Extensions: []string{".tmpl", ".html"},
-	}))
+type Config struct {
+	Theme      string
+	PortalType string
+	PortalAddr string
+}
 
-	m.Get("/search", func(req *http.Request, r render.Render) {
-		qs := req.FormValue("q")
-		qs = controllers.Normalize(qs)
+type VarName struct {
+	root    string
+	appName string
+	config  Config
+	db      *sql.DB
+}
+
+func (self *VarName) Init(root, appName string) (err error) {
+
+	self.root = root
+	self.appName = appName
+
+	err = self.initConfig()
+
+	if err != nil {
+		return err
+	}
+
+	err = self.initDB()
+
+	return
+}
+
+func (self *VarName) initConfig() (err error) {
+
+	configFile := path.Join(self.root, self.appName+".conf")
+
+	configData, err := ioutil.ReadFile(configFile)
+
+	if err != nil {
+		return
+	}
+
+	err = json.Unmarshal(configData, &self.config)
+
+	return
+}
+
+func (self *VarName) initDB() (err error) {
+
+	self.db, err = sql.Open("sqlite3", path.Join(self.root, "app/data", self.appName+".db"))
+
+	return
+}
+
+func (self *VarName) Run() {
+
+	var wg sync.WaitGroup
+	wg.Add(2)
+
+	go func() {
+		defer wg.Done()
+		self.runPortal()
+	}()
+
+	go func() {
+		defer wg.Done()
+		self.timeWork()
+	}()
+
+	wg.Wait()
+}
+
+func (self *VarName) timeWork() {
+
+}
+
+func check(err error) {
+	if err != nil {
+		log.Println("[ERRO]", err)
+		log.Println("[DEBU]", string(debug.Stack()[:]))
+		panic(err)
+	}
+}
+
+type handlerFunc func(*http.Request, martini.Params, map[string]interface{})
+type handlerWrapFunc func(*http.Request, martini.Params, render.Render)
+
+func martiniSafeHandler(layout string, hf handlerFunc) handlerWrapFunc {
+
+	return func(req *http.Request, params martini.Params, r render.Render) {
 
 		data := make(map[string]interface{})
-		data["Title"] = qs
-		data["PageClass"] = "search"
-		data["SearchString"] = qs
-		data["SearchRelates"] = []string{qs, qs, qs, qs}
-		data["SearchList"], err = constrollers.Search(0, 10, qs)
 
-		r.HTML(200, "search", data)
-	})
+		defer func() {
+			if err, ok := recover().(error); ok {
+				data["Status"] = "500"
+				data["ErrMsg"] = err.Error()
 
-	m.Get("/e/:entry", func(r render.Render, params martini.Params) {
-		r.HTML(200, "entry", map[string]interface{}{"entry": params["entry"]})
-	})
+				r.HTML(500, layout, data)
+			}
+		}()
 
-	m.Get("/(?P<page>(about|terms))", func(r render.Render, params martini.Params) {
-		r.HTML(200, "page", map[string]interface{}{
-			"PageHead":    params["page"],
-			"PageContent": "This is " + params["page"] + " page.",
-		})
-	})
+		log.Println("[INFO]", "request from", req.RemoteAddr, req.URL)
 
-	m.RunOnAddr(":8080")
+		hf(req, params, data)
+
+		r.HTML(200, layout, data)
+	}
 }
