@@ -1,5 +1,7 @@
 package models
 
+import "time"
+
 type Comment struct {
 	ID      int64
 	Entry   int64
@@ -8,8 +10,8 @@ type Comment struct {
 	URL     string
 	Title   string
 	Content string
-	CTime   string
-	ATime   string
+	CTime   time.Time
+	ATime   time.Time
 }
 
 type Comments struct {

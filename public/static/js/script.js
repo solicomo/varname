@@ -1,11 +1,3 @@
-function onInputFocus(input) {
-	input.parentElement.style.borderColor = "#3AA1BF";
-	return false;
-}
-function onInputBlur(input) {
-	input.parentElement.style.borderColor = "rgba(0, 0, 0, .25)";
-	return false;
-}
 
 var isClearTabs = false;
 function clearTabs() {

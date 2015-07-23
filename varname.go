@@ -10,15 +10,18 @@ import (
 	"runtime/debug"
 	"sync"
 
+	"varname/app/models"
+
 	"github.com/go-martini/martini"
 	"github.com/martini-contrib/render"
 	_ "github.com/mattn/go-sqlite3"
 )
 
 type Config struct {
-	Theme      string
-	PortalType string
-	PortalAddr string
+	Theme          string
+	PortalType     string
+	PortalAddr     string
+	ResultsPerPage int
 }
 
 type VarName struct {
@@ -61,7 +64,7 @@ func (self *VarName) initConfig() (err error) {
 
 func (self *VarName) initDB() (err error) {
 
-	self.db, err = sql.Open("sqlite3", path.Join(self.root, "app/data", self.appName+".db"))
+	err = models.InitDB("sqlite3", path.Join(self.root, "app/data", self.appName+".db"))
 
 	return
 }

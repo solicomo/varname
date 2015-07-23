@@ -10,6 +10,55 @@ ol, li {
 	padding: 0;
 }
 
+.form-control {
+	display: block;
+	width: 100%;
+	height: 28px;
+	padding: 6px 12px;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+.form-control:focus {
+	border: 1px solid #3AA1BF;
+}
+
+textarea.form-control {
+	height: auto;
+	overflow: auto;
+}
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	border-radius: 2px;
+	text-align: center;
+	white-space: nowrap;
+ 	vertical-align: middle;
+	font-size: 1em;
+	background-color: #fff;
+	color: #666;
+	background-image: none;
+	border: 1px solid #ccc;
+	touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 body {
 	height: 100%;
 	margin: 0;
@@ -32,7 +81,7 @@ body {
 
 #logo {
 	display: inline-block;
-	width: 120px;
+	width: 128px;
 	font-family: cursive;
 	font-size: 24px;
 	line-height: 32px;
@@ -80,22 +129,24 @@ body {
 
 #search-input {
 	position: relative;
-	padding: 0 72px 0 9px;
-	background-color: #fff;
-	border: 1px solid #ccc;
-	vertical-align: middle;
 }
 
 #search-input-q {
 	width: 100%;
+	padding: 0px 72px 0px 12px;
 	height: 28px;
-	border: none;
+	border: 1px solid #ccc;
+	outline: none;
 	font-size: 16px;
 	white-space: nowrap;
+	vertical-align: middle;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 #search-input-q:focus {
-	outline: none;
+	border-color: #3AA1BF;
 }
 
 #search-input-btn {
@@ -160,7 +211,7 @@ body {
 	display: none;
 	padding: 1px;
 	margin-left: -100px;
-	margin-top: 10px;
+	margin-top: 12px;
 	background-color: #fff;
 	-webkit-background-clip: padding-box;
 	background-clip: padding-box;
@@ -214,21 +265,20 @@ body {
 }
 
 .menu-item:hover {
-	background-color: #ccc;
+	background-color: #f1f1f1;
 }
 
 #footer {
 	display: block;
-	padding-left: 120px;
-	padding-top: 18px;
-	background: #f2f2f2;
-	color: #777;
+	padding: 18px 128px;
+	background: #f1f1f1;
+	color: #666;
 	font-size: small;
-	border-top: 1px solid #e4e4e4;
+	border-top: 1px solid #e5e5e5;
 }
 
 #footer a {
-	color: #777;
+	color: #666;
 	text-decoration: none;
  	white-space: nowrap;
 }
@@ -238,11 +288,12 @@ body {
 }
 
 #footer-copyright {
-	line-height: 15px;
+	display: inline-block;
 }
 
 #footer-info {
-	line-height: 40px;
+	display: inline-block;
+	margin-left: 10px;
 }
 
 #footer-info ul {
@@ -260,9 +311,12 @@ body {
 	margin-left: 10px;
 }
 
-#search-content {
+#content {
 	display: block;
-	margin-left: 120px;
+	margin-left: 128px;
+	width: 60%;
+	max-width: 600px;
+	color: #666;
 }
 
 #search-list {
@@ -304,17 +358,69 @@ body {
 	font-size: 13px;
 	max-width: 42em;
 	line-height: 18px;
-	color: #545454;
 	word-wrap: break-word;
 }
 
-#page-content {
+.page-content {
 	display: block;
-	margin-left: 120px;
-	color: #545454;
+	margin-left: 128px;
+	
 }
 
-#page-content h1 {
+.page-content h1 {
 	text-transform: capitalize;
 	color: #222;
+}
+
+#entry-comments-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-bottom: solid 1px #ccc;
+}
+
+#entry-comments-head h2 {
+	margin: 0px;
+	padding-bottom: 3px;
+}
+
+#entry-comments-head a {
+	margin: 0px;
+	padding-bottom: 3px;
+}
+
+#entry-comments-list>li {
+	border-bottom: solid 1px #e5e5e5;
+}
+
+.entry-comment-wrap {
+	padding: 12px 0px;
+	display: flex;
+}
+
+.entry-comment-avatar {
+	display: none;
+	width: 48px;
+	height: 48px;
+	margin-right: 12px;
+}
+
+.entry-comment-head time { 
+	margin-left: 12px;
+	color: #ccc;
+}
+
+#entry-comments-new .entry-comment {
+	width: 100%;
+}
+
+#entry-comments-new .entry-comment-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-bottom: 12px;
+}
+
+#entry-comments-new .entry-comment-content {
+	margin-bottom: 12px;
 }

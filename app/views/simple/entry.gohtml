@@ -1,5 +1,86 @@
 {{template "head" .}}
-<div id="entry-content">
-
-</div>
+<main id="content" class="main-entry">
+	<article id="entry-content">
+		<h1 id="entry-name">VarName</h1>
+		<section id="entry-caption">
+			<p>Variable Naming Service</p>
+		</section>
+		<section id="entry-abbr">
+			<ul>
+				<li><a href="">VN</a></li>
+				<li><a href="">varn</a></li>
+			</ul>
+		</section>
+	</article>
+	<section id="entry-comments">
+		<section id="entry-comments-head">
+			<h2>Comments</h2>
+			<a id="entry-comments-tgbtn">
+				<i id="entry-comments-tgicon" class="fa fa-chevron-up"></i>
+			</a>
+		</section>
+		<ol id="entry-comments-list">
+			<li id="entry-comment-{{.ID}}" class="entry-comment-wrap">
+				<a href="">
+					<img alt="" class="entry-comment-avatar" src="" />
+				</a>
+				<div class="entry-comment">
+					<div class="entry-comment-head">
+						<strong>TheDutchCoder</strong>
+						<time datetime="2015-06-23T13:15:06Z">Jun 23, 2015, 9:15 PM MT+8</time>
+					</div>
+					<div class="entry-comment-content">
+						<p>Ah thanks, sorry about reporting it!</p>
+					</div>
+				</div>
+			</li>
+			<li id="entry-comment-{{.ID2}}" class="entry-comment-wrap">
+				<a href="">
+					<img alt="" class="entry-comment-avatar" src="" />
+				</a>
+				<div class="entry-comment">
+					<div class="entry-comment-head">
+						<strong>TheDutchCoder</strong>
+						<time datetime="2015-06-23T13:15:06Z">Jun 23, 2015, 9:15 PM MT+8</time>
+					</div>
+					<div class="entry-comment-content">
+						<p>Ah thanks, sorry about reporting it!</p>
+					</div>
+				</div>
+			</li>
+			<li id="entry-comment-{{.ID3}}" class="entry-comment-wrap">
+				<a href="">
+					<img alt="" class="entry-comment-avatar" src="" />
+				</a>
+				<div class="entry-comment">
+					<div class="entry-comment-head">
+						<strong>TheDutchCoder</strong>
+						<time datetime="2015-06-23T13:15:06Z">Jun 23, 2015, 9:15 PM MT+8</time>
+					</div>
+					<div class="entry-comment-content">
+						<p>Ah thanks, sorry about reporting it!</p>
+					</div>
+				</div>
+			</li>
+		</ol>
+		<section id="entry-comments-new">
+			<div class="entry-comment-wrap">
+				<a href="">
+					<img alt="" class="entry-comment-avatar" src="" />
+				</a>
+				<form class="entry-comment" accept-charset="UTF-8" action="/new" method="POST">
+					<div class="entry-comment-head">
+						<input type="text" id="entry-comment-new-name" class="form-control" name="username" placeholder="Name">
+						<span style="width: 10%;"></span>
+						<input type="email" id="entry-comment-new-email" class="form-control" name="email" placeholder="Email">
+					</div>
+					<div class="entry-comment-content">
+						<textarea type="textarea" id="entry-comment-new-content" class="form-control" name="content" placeholder="Leave a comment" rows="8"></textarea>
+					</div>
+					<button type="submit" class="btn btn-primary">Comment</button>
+				</form>
+			</div>
+		</section>
+	</section>
+</main>
 {{template "foot" .}}

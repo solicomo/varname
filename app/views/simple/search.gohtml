@@ -1,32 +1,38 @@
 {{template "head" .}}
-<div id="search-content">
-	<div id="search-list">
+<main id="content" class="search-content">
+	<section id="search-list">
 		<ol id="search-ol">
 			{{range .SearchList}}
 			<li class="search-li">
-				<h3 class="search-title"><a href="/e/{{.Url}}">{{.Title}}</a></h3>
-				<cite class="search-cite">/e/{{.Url}}</cite>
-				<div class="search-caption">
-					{{.Caption}}
-				</div>
+				<article>
+					<h3 class="search-title"><a href="/e/{{.Url}}">{{.Title}}</a></h3>
+					<cite class="search-cite">/e/{{.Url}}</cite>
+					<p class="search-caption">
+						{{.Caption}}
+					</p>
+				</article>
 			</li>
 			{{end}}
 		</ol>
-	</div>
-	<div id="search-relate">
+	</section>
+	{{if .SearchRelates}}
+	<section id="search-relate" style="display: none;">
 		<ol id="search-relate-list">
 			{{range .SearchRelates}}
 			<li><a href="/search?q={{.}}">{{.}}</a></li>
 			{{end}}
 		</ol>
-	</div>
-	<div id="search-paging">
-		<ol id="search-page-list">
-			<li><a href="/search?q={{.SearchString}}&start=0&linage=20">First</a></li>
-			<li><a href="/search?q={{.SearchString}}&start=20&linage=20">2</a></li>
-			<li><a href="/search?q={{.SearchString}}&start=40&linage=20">3</a></li>
-			<li><a href="/search?q={{.SearchString}}&start=last">Last</a></li>
-		</ol>
-	</div>
-</div>
+	</section>
+	{{end}}
+	<section id="search-paging">
+		<ul id="search-page-list" class="pagination">
+			{{range .SearchNav}}
+			<li class="{{.Class}}"><a href="/search?q={{.SearchString}}&start={{.Start}}">{{.Name}}</a></li>
+			{{end}}
+		</ul>
+	</section>
+</main>
+<aside id="ad">
+	
+</aside>
 {{template "foot" .}}

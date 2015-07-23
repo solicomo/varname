@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"path"
+	"strconv"
 	"varname/app/controllers"
 
 	"github.com/go-martini/martini"
@@ -36,15 +37,24 @@ func (self *VarName) handleIndex(req *http.Request, params martini.Params, data 
 func (self *VarName) handleSearch(req *http.Request, params martini.Params, data map[string]interface{}) {
 
 	var err error
+	var offset int = 0
+	var count int = self.config.ResultsPerPage
 
 	qs := req.FormValue("q")
 	qs = controllers.Normalize(qs)
 
+	offset, _ = strconv.Atoi(req.FormValue("start"))
+
+	cc, err := req.Cookie("rpp")
+	if err == nil && cc != nil {
+		count, _ = strconv.Atoi(cc.Value)
+	}
+
 	data["Title"] = qs
 	data["PageClass"] = "search"
 	data["SearchString"] = qs
-	data["SearchRelates"] = []string{qs, qs, qs, qs}
-	data["SearchList"], err = controllers.Search(0, 10, qs)
+	data["SearchList"], data["SearchNav"], err = controllers.Search(offset, count, qs)
+	data["SearchRelates"] = []string{"", ""} //TODO
 
 	check(err)
 }

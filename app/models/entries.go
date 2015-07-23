@@ -1,23 +1,27 @@
 package models
 
-import "strings"
+import (
+	"strings"
+	"time"
+)
 
 type Entry struct {
 	ID      int64
+	Slug    string
 	Name    string
-	Abbrs   []string
+	Abbrs   string
 	Caption string
-	CTime   string
-	ATime   string
+	CTime   time.Time
+	ATime   time.Time
 }
 
 type Entries struct {
 }
 
 const (
-	SQL_UPDATE_ENTRY   = `UPDATE entries SET name=?,abbrs=?,caption=?,atime = datetime('now','localtime') WHERE id = ?;`
-	SQL_INSERT_ENTRY   = `INSERT INTO entries (name,abbrs,caption,ctime,atime) VALUES (?,?,?,datetime('now','localtime'),datetime('now','localtime'));`
-	SQL_SELECT_ENTRIES = `SELECT id,name,ctime,atime,abbrs,caption FROM entries;`
+	SQL_UPDATE_ENTRY   = `UPDATE entries SET slug=?,name=?,abbrs=?,caption=?,atime = datetime('now','localtime') WHERE id = ?;`
+	SQL_INSERT_ENTRY   = `INSERT INTO entries (slug,name,abbrs,caption,ctime,atime) VALUES (?,?,?,?,datetime('now','localtime'),datetime('now','localtime'));`
+	SQL_SELECT_ENTRIES = `SELECT id,slug,name,ctime,atime,abbrs,caption FROM entries;`
 )
 
 func (self *Entry) Save() (err error) {
@@ -25,12 +29,12 @@ func (self *Entry) Save() (err error) {
 	// update
 	if self.ID != 0 {
 
-		_, err = db.Exec(SQL_UPDATE_ENTRY, self.Name, self.Abbrs, self.Caption, self.ID)
+		_, err = db.Exec(SQL_UPDATE_ENTRY, self.Slug, self.Name, self.Abbrs, self.Caption, self.ID)
 		return
 	}
 
 	// insert
-	result, err := db.Exec(SQL_INSERT_ENTRY, self.Name, self.Abbrs, self.Caption)
+	result, err := db.Exec(SQL_INSERT_ENTRY, self.Slug, self.Name, self.Abbrs, self.Caption)
 
 	if err != nil {
 		return
@@ -41,7 +45,7 @@ func (self *Entry) Save() (err error) {
 	return
 }
 
-func (self *Entries) Search(offset, count int, words string) (entries []Entry, err error) {
+func (self *Entries) Search(offset, count int, words string) (entries []Entry, total int, err error) {
 
 	rows, err := db.Query(SQL_SELECT_ENTRIES)
 
@@ -55,7 +59,7 @@ func (self *Entries) Search(offset, count int, words string) (entries []Entry, e
 
 		var entry Entry
 
-		err = rows.Scan(&entry.ID, &entry.Name, &entry.CTime, &entry.ATime, &entry.Abbrs, &entry.Caption)
+		err = rows.Scan(&entry.ID, &entry.Slug, &entry.Name, &entry.CTime, &entry.ATime, &entry.Abbrs, &entry.Caption)
 
 		if err != nil {
 			return

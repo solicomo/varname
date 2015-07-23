@@ -27,5 +27,6 @@ _testmain.go
 *.test
 *.prof
 *.sqlite
+*.db
 *.log
 varname
