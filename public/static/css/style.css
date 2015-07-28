@@ -1,9 +1,13 @@
 
+h1 {
+	font-size: 2em;
+}
+
 a {
 	text-decoration: none;
 }
 
-ol, li {
+ol, ul {
 	list-style: none;
 	border: 0;
 	margin: 0;
@@ -320,11 +324,10 @@ body {
 }
 
 #search-list {
-	margin: 9px 0 0;
+	margin: 12px 0 0;
 }
 
 .search-li {
-	margin: 0 0 23px 0;
 	border: 0;
 	padding: 0;
 	line-height: 1.2;
@@ -334,7 +337,6 @@ body {
 	display: block;
 	margin: 0;
 	overflow: hidden;
-	font-size: 18px;
 	white-space: nowrap;
 	text-overflow: ellipsis;
 }
@@ -347,7 +349,6 @@ body {
 }
 
 .search-cite {
-	font-size: 14px;
 	line-height: 16px;
 	color: #F5A503;
 	white-space: nowrap;
@@ -355,21 +356,25 @@ body {
 }
 
 .search-caption {
-	font-size: 13px;
+	margin-top: 0;
 	max-width: 42em;
 	line-height: 18px;
 	word-wrap: break-word;
 }
 
-.page-content {
-	display: block;
-	margin-left: 128px;
-	
+#entry-abbrs ul>li {
+	display: inline-block;
+	padding: 4px 6px;
+	background: #f1f1f1;
+	font-size: small;
 }
 
-.page-content h1 {
-	text-transform: capitalize;
-	color: #222;
+#entry-abbrs a {
+	color: #666;
+}
+
+#entry-comments {
+	margin-top: 24px;
 }
 
 #entry-comments-head {
