@@ -384,13 +384,17 @@ body {
 	border-bottom: solid 1px #ccc;
 }
 
+#entry-comments-head a {
+	color: #666;
+}
+
 #entry-comments-head h2 {
-	margin: 0px;
+	margin: 0;
 	padding-bottom: 3px;
 }
 
 #entry-comments-head a {
-	margin: 0px;
+	margin: 0;
 	padding-bottom: 3px;
 }
 
@@ -399,7 +403,7 @@ body {
 }
 
 .entry-comment-wrap {
-	padding: 12px 0px;
+	padding: 12px 0;
 	display: flex;
 }
 
