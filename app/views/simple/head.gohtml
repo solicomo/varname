@@ -26,16 +26,13 @@
 					</form>
 				</div>
 				<div id="menu">
+					{{if .Entry}}
 					<div class="submenu">
-						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)"><i class="fa fa-bars"></i></a>
-						<div class="menu-tab">
-							<div class="menu-tab-arrow">
-							</div>
-							<div class="menu-tab-content">
-								<a class="menu-item menu-item-last" href="/setting.html"><i class="fa fa-plus fa-fw"></i>&nbsp; New</a>
-								<a class="menu-item" href="/about.html"><i class="fa fa-edit fa-fw"></i>&nbsp; Edit</a>
-							</div>
-						</div>
+						<a class="menu-button" href="/e/{{.Entry}}/edit"><i class="fa fa-edit"></i></a>
+					</div>
+					{{end}}
+					<div class="submenu">
+						<a class="menu-button" href="/e/_/new"><i class="fa fa-plus"></i></a>
 					</div>
 					<div class="submenu">
 						<a class="menu-button" href="javascript:void(0)" onclick="showTabFor(this)"><i class="fa fa-user"></i></a>

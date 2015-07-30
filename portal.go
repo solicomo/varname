@@ -20,6 +20,8 @@ func (self *VarName) runPortal() {
 	}))
 
 	m.Get("/search", martiniSafeHandler("search", self.handleSearch))
+	m.Get("/e/:entry/new", martiniSafeHandler("new", self.handleNewEntry))
+	m.Get("/e/:entry/edit", martiniSafeHandler("edit", self.handleEditEntry))
 	m.Get("/e/:entry", martiniSafeHandler("entry", self.handleEntry))
 	m.Get("/(?P<page>(about|terms))", martiniSafeHandler("page", self.handlePage))
 
@@ -60,6 +62,15 @@ func (self *VarName) handleSearch(req *http.Request, params martini.Params, data
 }
 
 func (self *VarName) handleEntry(req *http.Request, params martini.Params, data map[string]interface{}) {
+
+	data["Entry"] = params["entry"]
+}
+
+func (self *VarName) handleNewEntry(req *http.Request, params martini.Params, data map[string]interface{}) {
+
+}
+
+func (self *VarName) handleEditEntry(req *http.Request, params martini.Params, data map[string]interface{}) {
 
 	data["Entry"] = params["entry"]
 }

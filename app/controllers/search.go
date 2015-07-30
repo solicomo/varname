@@ -13,9 +13,9 @@ type SearchResult struct {
 }
 
 type SearchNav struct {
-	Name  string
-	Class string
-	Start int
+	PreStart  int
+	NextStart int
+	LastStart int
 }
 
 func Normalize(qs string) (ns string) {
@@ -24,7 +24,7 @@ func Normalize(qs string) (ns string) {
 	return
 }
 
-func Search(offset, count int, qs string) (results []SearchResult, navs []SearchNav, err error) {
+func Search(offset, count int, qs string) (results []SearchResult, navs SearchNav, err error) {
 
 	var entries models.Entries
 
@@ -48,7 +48,16 @@ func Search(offset, count int, qs string) (results []SearchResult, navs []Search
 		results = append(results, res)
 	}
 
-	navs = make([]SearchNav, 0)
+	navs.PreStart = offset - count
 
+	if navs.PreStart < 0 && offset > 0 {
+		navs.PreStart = 0
+	}
+
+	navs.NextStart = offset + count
+
+	if navs.NextStart >= total {
+		navs.NextStart = -1
+	}
 	return
 }

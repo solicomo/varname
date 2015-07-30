@@ -26,8 +26,15 @@
 	{{end}}
 	<section id="search-paging">
 		<ul id="search-page-list" class="pagination">
-			{{range .SearchNav}}
-			<li class="{{.Class}}"><a href="/search?q={{.SearchString}}&start={{.Start}}">{{.Name}}</a></li>
+			{{if ge .SearchNav.PreStart 0}}
+			<li class="nav-pre"><a href="/search?q={{.SearchString}}&start={{.SearchNav.PreStart}}"><i class="fa fa-chevron-left"></i></a></li>
+			{{else}}
+			<li class="nav-pre disabled"><a href="javascript:void(0)"><i class="fa fa-chevron-left"></i></a></li>
+			{{end}}
+			{{if gt .SearchNav.NextStart 0}}
+			<li class="nav-next"><a href="/search?q={{.SearchString}}&start={{.SearchNav.NextStart}}"><i class="fa fa-chevron-right"></i></a></li>
+			{{else}}
+			<li class="nav-next disabled"><a href="javascript:void(0)"><i class="fa fa-chevron-right"></i></a></li>
 			{{end}}
 		</ul>
 	</section>

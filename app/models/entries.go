@@ -55,6 +55,7 @@ func (self *Entries) Search(offset, count int, words string) (entries []Entry, t
 
 	defer rows.Close()
 
+	total = 5
 	for rows.Next() {
 
 		var entry Entry
@@ -71,7 +72,7 @@ func (self *Entries) Search(offset, count int, words string) (entries []Entry, t
 
 		offset = offset - 1
 
-		if offset > 0 {
+		if offset >= 0 {
 			continue
 		}
 

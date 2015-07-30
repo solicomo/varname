@@ -1,0 +1,22 @@
+{{template "head" .}}
+<main id="content" class="main-entry-edit">
+	<section id="entry-comments-new">
+		<div class="entry-comment-wrap">
+			<a href="">
+				<img alt="" class="entry-comment-avatar" src="" />
+			</a>
+			<form class="entry-comment" accept-charset="UTF-8" action="/new" method="POST">
+				<div class="entry-comment-head">
+					<input type="text" id="entry-comment-new-name" class="form-control" name="username" placeholder="Name">
+					<span style="width: 10%;"></span>
+					<input type="email" id="entry-comment-new-email" class="form-control" name="email" placeholder="Email">
+				</div>
+				<div class="entry-comment-content">
+					<textarea type="textarea" id="entry-comment-new-content" class="form-control" name="content" placeholder="Leave a comment" rows="8"></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Comment</button>
+			</form>
+		</div>
+	</section>
+</main>
+{{template "foot" .}}

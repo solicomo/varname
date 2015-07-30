@@ -14,6 +14,10 @@ ol, ul {
 	padding: 0;
 }
 
+.disabled>a {
+	cursor: not-allowed;
+}
+
 .form-control {
 	display: block;
 	width: 100%;
@@ -360,6 +364,22 @@ body {
 	max-width: 42em;
 	line-height: 18px;
 	word-wrap: break-word;
+}
+
+#search-paging {
+	margin: 12px 0;
+}
+
+#search-page-list li {
+	display: inline-block;
+}
+
+#search-page-list a {
+	color: #F2385A;
+}
+
+#search-page-list .disabled>a {
+	color: #ccc;
 }
 
 #entry-abbrs ul>li {
